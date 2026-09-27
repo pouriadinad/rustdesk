@@ -452,7 +452,7 @@ class MyTheme {
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
     colorScheme: ColorScheme.light(
-        primary: Colors.blue, secondary: accent, background: grayBg),
+        rimary: Color(0xFFF48122), secondary: Color(0xFFF48122), background: grayBg),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -560,8 +560,8 @@ class MyTheme {
         style: MenuStyle(
             backgroundColor: MaterialStatePropertyAll(Color(0xFF121212)))),
     colorScheme: ColorScheme.dark(
-      primary: Colors.blue,
-      secondary: accent,
+      primary: Color(0xFFF48122),
+      secondary: Color(0xFFF48122),
       background: Color(0xFF24252B),
     ),
     popupMenuTheme: PopupMenuThemeData(
@@ -4184,12 +4184,11 @@ List<String> getPrinterNames() {
   }
 }
 
-String _appName = '';
+String _appName = 'FanapDesk';
 String get appName {
-  if (_appName.isEmpty) {
-    _appName = bind.mainGetAppNameSync();
-  }
-  return _appName;
+  return 'FanapDesk';
+}
+
 }
 
 String getConnectionText(bool secure, bool direct, String streamType) {
