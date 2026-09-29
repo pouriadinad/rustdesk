@@ -249,9 +249,9 @@ class MyTheme {
   MyTheme._();
 
   static const Color grayBg = Color(0xFFEFEFF2);
-  static const Color accent = Color(0xFF0071FF);
-  static const Color accent50 = Color(0x770071FF);
-  static const Color accent80 = Color(0xAA0071FF);
+  static const Color accent = Color(0xFFF08122);
+  static const Color accent50 = Color(0x77F08122);
+  static const Color accent80 = Color(0xAAF08122);
   static const Color canvasColor = Color(0xFF212121);
   static const Color border = Color(0xFFCCCCCC);
   static const Color idColor = Color(0xFF00B6F0);
@@ -452,7 +452,7 @@ class MyTheme {
         style:
             MenuStyle(backgroundColor: MaterialStatePropertyAll(Colors.white))),
     colorScheme: ColorScheme.light(
-        rimary: Color(0xFFF48122), secondary: Color(0xFFF48122), background: grayBg),
+        primary: Colors.blue, secondary: accent, background: grayBg),
     popupMenuTheme: PopupMenuThemeData(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -560,8 +560,8 @@ class MyTheme {
         style: MenuStyle(
             backgroundColor: MaterialStatePropertyAll(Color(0xFF121212)))),
     colorScheme: ColorScheme.dark(
-      primary: Color(0xFFF48122),
-      secondary: Color(0xFFF48122),
+      primary: Colors.blue,
+      secondary: accent,
       background: Color(0xFF24252B),
     ),
     popupMenuTheme: PopupMenuThemeData(
@@ -3021,7 +3021,7 @@ int versionCmp(String v1, String v2) {
 }
 
 String getWindowName({WindowType? overrideType}) {
-  final name = bind.mainGetAppNameSync();
+  final name = "Fanapdesk"; // Fanapdesk branding
   switch (overrideType ?? kWindowType) {
     case WindowType.Main:
       return name;
@@ -4184,11 +4184,12 @@ List<String> getPrinterNames() {
   }
 }
 
-String _appName = 'FanapDesk';
+String _appName = '';
 String get appName {
-  return 'FanapDesk';
-}
-
+  if (_appName.isEmpty) {
+    _appName = bind.mainGetAppNameSync();
+  }
+  return _appName;
 }
 
 String getConnectionText(bool secure, bool direct, String streamType) {
